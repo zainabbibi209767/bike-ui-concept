@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThrottleMax | Unleash the Beast</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body, html { height: 100vh; overflow: hidden; font-family: 'Inter', sans-serif; background-color: #050505; }
+
+        .bike-wrapper {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            background: radial-gradient(circle at top right, #1a1a1a, #050505);
+        }
+
+        .main-card {
+            width: 95%;
+            max-width: 1200px;
+            height: 85vh;
+            background: #0d0d0d;
+            border-radius: 20px;
+            display: flex;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.8);
+            overflow: hidden;
+            border: 1px solid #222;
+            position: relative;
+        }
+
+        /* Left Side: Performance Info */
+        .info-panel {
+            flex: 1;
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 5;
+            background: linear-gradient(90deg, #0d0d0d 80%, transparent);
+        }
+
+        .brand-tag {
+            color: #d4ff00; /* Neon Lime */
+            font-weight: 900;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 4.5rem;
+            color: white;
+            line-height: 0.9;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .stats {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .stat-box {
+            border-left: 3px solid #d4ff00;
+            padding-left: 15px;
+        }
+
+        .stat-val {
+            display: block;
+            color: white;
+            font-weight: 900;
+            font-size: 1.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+        }
+
+        .ride-btn {
+            padding: 20px 50px;
+            background: #d4ff00;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            width: fit-content;
+            clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+        }
+
+        .ride-btn:hover {
+            transform: skewX(-10deg) scale(1.05);
+            box-shadow: 0 0 30px rgba(212, 255, 0, 0.4);
+        }
+
+        /* Right Side: High-Speed Visual */
+        .visual-panel {
+            flex: 1.5;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bike-img {
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=2070') no-repeat center center/cover;
+            filter: grayscale(30%) brightness(0.8);
+            transition: 1s;
+        }
+
+        .main-card:hover .bike-img {
+            transform: scale(1.1) translateX(-20px);
+            filter: grayscale(0%) brightness(1);
+        }
+
+        .speed-line {
+            position: absolute;
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d4ff00);
+            opacity: 0.3;
+            animation: moveLines 2s infinite linear;
+        }
+
+        @keyframes moveLines {
+            from { transform: translateX(-200%); }
+            to { transform: translateX(500%); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bike-wrapper">
+        <div class="main-card">
+            <div class="info-panel">
+                <span class="brand-tag">Racing Series 2026</span>
+                <h1>Pure <br>Velocity.</h1>
+                
+                <div class="stats">
+                    <div class="stat-box">
+                        <span class="stat-val">299</span>
+                        <span class="stat-label">Top Speed KM/H</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-val">1000</span>
+                        <span class="stat-label">Engine CC</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-val">2.8s</span>
+                        <span class="stat-label">0-100 KM/H</span>
+                    </div>
+                </div>
+
+                <a href="#" class="ride-btn">Experience Power</a>
+            </div>
+
+            <div class="visual-panel">
+                <div class="bike-img"></div>
+                <!-- Decorative speed lines -->
+                <div class="speed-line" style="top: 30%; left: 0;"></div>
+                <div class="speed-line" style="top: 60%; left: -50px; animation-delay: 0.5s;"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
